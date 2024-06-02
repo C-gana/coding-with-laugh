@@ -12,11 +12,19 @@ if (mysqli_connect_errno()) {
 }
 
 $sql = "INSERT into users (username,email,password)
-        VALUES ('C-gana','cgana@gmail.com','".md5("cgana")."')";
+        VALUES ('Magaleta','magaleta@gmail.com','".md5("magaleta")."')";
 $result = mysqli_query($conn, $sql);
 
 if($result){
   echo "Record(s) inserted successfully";
 }else{
   echo "operation failed";
+}
+
+# Displaying the users table from the DB
+$sql = "SELECT * from `users`";
+$result = mysqli_query($conn, $sql);
+
+foreach($result as $row){
+  echo $row['username'] . " " . md5($row['password']) . "<br>";
 }
