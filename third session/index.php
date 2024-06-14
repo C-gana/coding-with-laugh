@@ -28,3 +28,15 @@ $response = $conn->query($update_sql);
     echo "Update failed";
   }
 }
+if(isset($_POST['deleteData'])){
+  $user_id = $_POST['id'];
+  $delete_sql = "DELETE from users where user_id = $user_id";
+  $response = $conn->query($delete_sql);
+  echo $response;
+  if($response){
+    header("Location:form.php");
+  }else{
+    echo "Can't delete this data";
+  }
+}
+  

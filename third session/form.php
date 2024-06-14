@@ -35,7 +35,9 @@ $users = $conn->query($sql);
         <td><?php echo $user['username']?></td>
         <td><?php echo $user['email']?></td>
         <td><?php echo $user['password']?></td>
-        <td><a href="update.php?user_id=<?php echo $user['user_id']?>">Edit</a><button>Delete</button></td>
+        <td><a href="update.php?user_id=<?php echo $user['user_id']?>"><button>Edit</button></a>
+            <a href="delete.php?user_id=<?php echo $user['user_id']?>"><button>Delete</button></a>
+        </td>
       </tr>
       <?php endforeach?>
     </tbody>
