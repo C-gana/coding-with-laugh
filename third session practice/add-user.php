@@ -11,10 +11,13 @@ $users = $conn->query($sql);
   <title>Adding users</title>
 </head>
 <body>
-  <input type="text" name="username" placeholder="Username"><br>
-  <input type="email" name="email" placeholder="Email"><br>
-  <input type="text" name="department" placeholder="Department"><br>
-  <input type="submit" value="Add User"><br><hr>
+  <p>Please enter the correct details to add a user</p>
+  <form action="index.php" method="POST">
+    <input type="text" name="username" placeholder="Username"><br>
+    <input type="email" name="email" placeholder="Email"><br>
+    <input type="text" name="department" placeholder="Department"><br>
+    <input type="submit" name="addUser" value="Add User"><br><hr>
+  </form>
   <table>
     <thead>
       <th>No.</th>
@@ -23,8 +26,10 @@ $users = $conn->query($sql);
       <th>Department</th>
     </thead>
     <tbody>
-      <?php foreach($users as $user):?>
+      <?php $i=1; foreach($users as $user):?>
         <tr>
+          <td><?php echo $i;
+          $i++;?></td>
           <td><?php echo $user['username']?></td>
           <td><?php echo $user['email']?></td>
           <td><?php echo $user['department']?></td>
