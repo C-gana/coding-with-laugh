@@ -24,6 +24,7 @@ $users = $conn->query($sql);
       <th>Username</th>
       <th>Email</th>
       <th>Department</th>
+      <th>Actions</th>
     </thead>
     <tbody>
       <?php $i=1; foreach($users as $user):?>
@@ -33,6 +34,9 @@ $users = $conn->query($sql);
           <td><?php echo $user['username']?></td>
           <td><?php echo $user['email']?></td>
           <td><?php echo $user['department']?></td>
+          <td><a href="update-user.php?id=<?php echo $user['id']?>"><button>Edit</button></a>
+              <a href="deletete-user.php?id=<?php echo $user['id']?>"><button>Delete</button></a>
+          </td>
         </tr>
         <?php endforeach?>
     </tbody>
