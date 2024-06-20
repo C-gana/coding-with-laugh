@@ -28,3 +28,13 @@ if(isset($_POST['updateUser'])){
   }
 
 }
+if(isset($_POST['deleteUser'])){
+  $id = $_POST['id'];
+  $delete_sql = "DELETE from users where id = $id";
+  $response = $conn->query($delete_sql);
+  if($response){
+    header("Location:add-user.php");
+  }else{
+    echo "OOPS user not deleted";
+  }
+}

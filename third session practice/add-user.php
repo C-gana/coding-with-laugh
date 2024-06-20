@@ -35,7 +35,7 @@ $users = $conn->query($sql);
           <td><?php echo $user['email']?></td>
           <td><?php echo $user['department']?></td>
           <td><a href="update-user.php?id=<?php echo $user['id']?>"><button>Edit</button></a>
-              <a href="deletete-user.php?id=<?php echo $user['id']?>"><button>Delete</button></a>
+              <a href="delete-user.php?id=<?php echo $user['id']?>"><button>Delete</button></a>
           </td>
         </tr>
         <?php endforeach?>
