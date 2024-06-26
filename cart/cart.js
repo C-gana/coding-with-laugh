@@ -46,7 +46,11 @@ function showCart() {
         </div>`;
   });
   cartDiv.innerHTML = cartHTML;
-  totalElement.innerHTML = `<p>TOTAL</p>K${total}`;
+  if (total > 0) {
+    totalElement.innerHTML = `<p>TOTAL</p>K${total}`;
+  } else {
+    totalElement.innerHTML = "";
+  }
 }
 
 //deleting an item from the cart
