@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh;
+}
+.thumbnail {
+  background-image: url(../images/StockCake-Tech-Savvy\ Creator_1720107696.jpg);
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center top;
+}
+.card {
+  display: grid;
+  place-content: center;
+}
+.card div a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  float: right;
+}
+.card div a:hover {
+  text-decoration: underline;
+}
+input {
+  padding: 3px 10px;
+  width: 300px;
+  margin: 10px 0px;
+  outline: none;
+  border-radius: 3px;
+  border: 0.5px solid rgb(151, 151, 151);
+  font-size: 15px;
+}
+
+input[type="submit"] {
+  background-color: #561956;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+input[type="submit"]:hover {
+  background-color: #7c237c;
+}
+h3 {
+  font-size: 20px;
+  text-align: center;
+}
