@@ -1,0 +1,16 @@
+.thumbnail {
+  background-image: url(../images/StockCake-Tech-Fueled\ Adventure_1720107629.jpg);
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center bottom;
+}
+
+input[type="submit"] {
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+input[type="submit"]:hover {
+  background-color: #251f25;
+}
