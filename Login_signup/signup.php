@@ -11,16 +11,21 @@
   <div class="container">
     <div class="thumbnail">
     </div>
-    <form method="post" class="card">
+    <form method="post" class="card js-sign-form">
       <h3>SIGN UP</h3>
-      <input type="text" name="username" placeholder="Username">
-      <input type="email" name="email" placeholder="Email">
-      <input type="password" name="pwd" placeholder="Password">
-      <input type="password" name="pwd" placeholder="Confirm Password">
-      <input type="submit"  value="Sign up">
+      <div>
+        <input type="text" class="js-username" name="username" placeholder="Username">
+        <small></small>
+      </div>
+      
+      <input type="email" class="js-email" name="email" placeholder="Email">
+      <input type="password" class="js-pwd" name="pwd" placeholder="Password">
+      <input type="password" class="js-cpwd" name="pwd" placeholder="Confirm Password">
+      <input type="submit" class="js-sign-btn" value="Sign up">
       By clicking sign up you agree to our <br><a href="">Terms and conditions</a> .
       <div>Already have account? <a href="login.php">Login</a></div>
     </form>
   </div>
+  <script src="scripts/validate.js"></script>
 </body>
 </html>

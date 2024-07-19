@@ -51,3 +51,7 @@ h3 {
   font-size: 20px;
   text-align: center;
 }
+small {
+  display: block;
+  color: darkred;
+}
