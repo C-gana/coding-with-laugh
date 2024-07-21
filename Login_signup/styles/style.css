@@ -55,3 +55,13 @@ small {
   display: block;
   color: darkred;
 }
+
+.error {
+  color: red;
+  text-align: center;
+  background-color: rgb(245, 207, 246);
+  padding: 10px 5px;
+  margin: 10px 0px;
+  font-weight: 500;
+  border: 1px solid #bbb9bb;
+}
