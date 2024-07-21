@@ -8,11 +8,30 @@
   <title>Login</title>
 </head>
 <body>
+  <?php
+  require ("conn.php");
+  if(isset($_POST['username'])){
+    $username = htmlentities($_POST['username']);
+    $email = htmlentities($_POST['email']);
+    $pwd = htmlentities($_POST['pwd']);
+
+    $sql = "INSERT into users (username, email, password) Values('$username','$email','" . md5($pwd) . "')";
+    $response = $conn->query($sql);
+    if($response){
+      header("Location:login.php");
+    }else{
+      header("Location:signup.php?error=An error occured");
+    }
+  }
+  ?>
   <div class="container">
     <div class="thumbnail">
     </div>
     <form method="post" class="card js-sign-form">
       <h3>SIGN UP</h3>
+      <div class="error">
+        <?php if(isset($_GET['error'])) echo $_GET['error'];?>
+      </div>
       <div>
         <input type="text" class="js-username" name="username" placeholder="Username">
         <small></small>

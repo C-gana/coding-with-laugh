@@ -8,8 +8,9 @@ form.addEventListener("submit", (e) => {
   let validUserName = nameValidation();
   let validPwd = pwdValidation();
   let validEmail = emailValidation();
-  if (validUserName && validPwd) alert("valid");
-  else e.preventDefault();
+  if (!validUserName || !validPwd || !validEmail) {
+    e.preventDefault();
+  }
 });
 
 //Password validation--------------------------
@@ -39,12 +40,14 @@ const nameValidation = () => {
     toggleError(username, true);
     return false;
   }
+  return true;
 };
 //email validation--------------------------------
 const emailValidation = () => {
   if (!isFilled(emailElement)) {
     return false;
   }
+  return true;
 };
 //checking if a field is !empty--------------------
 const isFilled = (input) => {
