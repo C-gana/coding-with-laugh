@@ -14,6 +14,11 @@
   if(isset($_POST['username'])){
     $username = htmlentities($_POST['username']);
     $password = htmlentities($_POST['pwd']);
+
+    if(empty($password)||empty($username)){
+      header("Location:login.php?error=Please fill in all fields");
+      exit();
+    }
     $sql = "SELECT * FROM users WHERE username ='$username' AND password = '".md5($password)."' ";
     $user = $conn->query($sql)->fetch_assoc();
     if($user){
@@ -29,7 +34,7 @@
     </div>
     <form method="post" class="card">
       <h3>LOGIN</h3>
-      <div class="error"><?php if(isset($_GET['error'])) echo $_GET['error']?></div>
+      <?php if(isset($_GET['error'])) echo "<div class='error'>".$_GET['error']."</div>"?>
       <input type="text" name="username" placeholder="Username">
       <input type="password" name="pwd" placeholder="Password">
       <input type="submit"  value="Login">

@@ -29,9 +29,7 @@
     </div>
     <form method="post" class="card js-sign-form">
       <h3>SIGN UP</h3>
-      <div class="error">
-        <?php if(isset($_GET['error'])) echo $_GET['error'];?>
-      </div>
+      <?php if(isset($_GET['error'])) echo "<div class='error'>".$_GET['error']."</div>"?>
       <div>
         <input type="text" class="js-username" name="username" placeholder="Username">
         <small></small>
